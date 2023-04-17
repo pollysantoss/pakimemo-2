@@ -1,5 +1,5 @@
 # pakimemo-2
-Realizado em maio de 2022. Projeto de avaliação a distância da disciplina Construção de Página Web - TSC CEDERJ/UFF. Baseado no projeto anterior PAKIMEMO.
+Realizado em maio de 2022. Projeto de avaliação a distância da disciplina Construção de Página Web - TSC CEDERJ/UFF. Baseado no projeto anterior PakiMemo.
 
 Baseado no projeto anterio PakiMemo, com algumas alterações de páginas e adição de códigos javascript dentro das páginas html por <script></script>;
 
