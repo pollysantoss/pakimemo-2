@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Compras</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
+        <style type="text/css"> 
+            #loginCad {
+                width: 260px;
+            }
+            #idEmail {
+                width: 160px;
+            }
+            #senhaCad {
+                width: 180px;
+            }
+            #lisSelProd {
+                width: 370px;
+            }
+            #selProduto {
+                width: 75%;
+            }
+            #btnIncluir {
+                width: 70px;
+            }
+            #boxPedidos {
+                height: 100px;
+            }
+            #lisPedArea {
+                height: 90%;
+                width:100%;
+            }
+            #fsBandeira {
+                height: 80px;
+                width: 90px;
+                text-align: left;
+            }
+            #numCartao {
+                width: 350px;
+                height: 35px;
+                padding-top: 10px;
+            }
+            #valCartao {
+                width: 230px;
+                height: 35px;
+            }
+            #boxParcel {
+                width: 230px;
+                height: 30px;
+            }
+        </style>
+
+        <script language="javascript">
+
+            var Produtos = new Array(11);
+            Produtos[0] = [".........."];
+            Produtos[1] = ["Memória DDR3 Kingston 4GB", 200.00];
+            Produtos[2] = ["Memória DDR3 Samsung 8GB", 190.00]; 
+            Produtos[3] = ["Memória DDR4 Kingston Fury 8GB", 298.00]; 
+            Produtos[4] = ["Memória DDR4 Corsair Vengeance 8GB", 245.00];
+            Produtos[5] = ["HD Sata III Western Digital 500 Gb", 170.00];
+            Produtos[6] = ["HD Sata III Seagate 1 Tb", 350.00];
+            Produtos[7] = ["SSD Sata III Samdisk 480 Gb", 380.00];
+            Produtos[8] = ["SSD Sata III Kingston 960 Gb", 700.00];
+            Produtos[9] = ["SSD M2 Kingston 500 Gb", 410.00];
+            Produtos[10] = ["SSD M2 Western Digital 240 Gb", 270.00];
+
+            function SelecionarProduto(f) {
+                var prod = f.selProduto.selectedIndex;
+                var valor = (f.preco.value > 0)
+                                    ? parseFloat(f.preco.value) : 0;
+                if(prod > 0) {
+                    f.areadetexto.value += Produtos[prod][0] + "\n";
+                    f.preco.value = valor + Produtos[prod][1];
+                    f.selProduto.value = Produtos[0][0];
+                }
+                else
+                    alert("Nenhum produto selecionado!");   
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <img src="Imagens/PakiLogoTopo.png" class="imgLogo" alt="Logo Elefante PakiMemo">
+            <adress class="ender">
+                Rua do Paço do Elefantinho, 123<br>
+                Tel: (21) 4321-5678<br>
+                <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+            </adress>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+                <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+                <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+                <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+                <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <form class="FormBox" name="f">
+                <legend>Compras</legend>
+                <fieldset class="FSLinhaInteira">
+                    <legend>Identificação</legend>
+
+                    <div class="LinhaForm">
+                        <div class="ColEsq" id="loginCad">
+                            <label for="email" class="LabBox">E-mail:</label>
+                            <input type="email" nome="email" class="InpBoxGnd" id="idEmail" required>
+                        </div>
+
+                        <div class="ColDir" id="senhaCad">
+                            <label for="senha" class="LabBox">Senha:</label>
+                            <input type="password" id="senha" name="senha" class="InpBoxMed" required>
+                        </div>
+                    </div>
+                    <p>Se você ainda não tem cadastro clique <a href="Cadastro.html">aqui</a>!</p>
+                </fieldset>
+
+                <fieldset class="FSLinhaInteira">
+                    <legend>Lista de Compras</legend>
+
+                    <div class="LinhaForm">
+                        <div class="ColEsq" id="lisSelProd">
+                            <label for="selProduto" class="LabBox">Produtos:</label>
+                            <select id="selProduto" name="selProduto" readonly required>
+                                <option>..........</option>                                                
+                                <optgroup label="Memória DDR3">
+                                    <option value="Kingston 4Gb">Kingston 4Gb</option>
+                                    <option value="Samsung 8Gb">Samsung 8Gb</option>
+                                </optgroup>
+                                <optgroup label="Memória DDR4">                                
+                                    <option value="Kingston Fury 8Gb">Kingston Fury 8Gb</option>
+                                    <option value="Corsair Vengeance 8Gb">Corsair Vengeance 8Gb</option>
+                                </optgroup>
+                                <optgroup label="HD Sata III">                                
+                                    <option value="Western Digital 500Gb">Western Digital 500Gb</option>
+                                    <option value="Seagate 1Tb">Seagate 1Tb</option>
+                                </optgroup>
+                                <optgroup label="SSD Sata III">                                
+                                    <option value="Samdisk 480 Gb">Samdisk 480 Gb</option>
+                                    <option value="Kingston 960 Gb">Kingston 960 Gb</option>
+                                </optgroup>
+                                <optgroup label="SSD M2">                                
+                                    <option value="Kingston 500Gb">Kingston 500Gb</option>
+                                    <option value="Western Digital 240Gb">Western Digital 240Gb</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="ColDir" id="btnIncluir">
+                            <label for="botaoincluir"></label>
+                            <input type="button" id="botaoincluir" name="incluir" value="Incluir" onClick="SelecionarProduto(this.form);">
+                        </div>
+                    </div>
+                                   
+                    <div class="LinhaForm" id="boxPedidos">
+                        <label for="areatexto" class="LabBox"></label>
+                        <textarea name="areadetexto" class="InpBoxGnd" id="lisPedArea"></textarea>
+                    </div>
+                    
+                    <div class="LinhaForm">
+                        <div class="ColDir">
+                            <label for="preco" class="LabBox">Valor: R$</label>
+                            <input type="text" id="preco" name="preco" class="InpBoxMed">
+                        </div>  
+                    </div>                   
+                </fieldset>
+
+                <fieldset class="FSLinhaInteira">                    
+                    <legend>Dados do Cartão</legend>
+                    <fieldset class="FSColDir" id="fsBandeira">
+                        <legend>Bandeira</legend>                                            
+                            <input type="radio" id="visa" name="bandeira" value="visa" checked>
+                            <label for="visa">Visa</label><br>
+                            <input type="radio" id="master" name="bandeira" value="master">
+                            <label for="master">Master</label><br>
+                            <input type="radio" id="elo" name="bandeira" value="elo">
+                            <label for="elo">Elo</label>                                    
+                    </fieldset>
+
+                    <div class="LinhaForm">
+                        <div class="ColEsq" id="numCartao">
+                            <label for="numero" class="LabBox">Número:</label>
+                            <input type="text" id="numero" nome="cartao" class="numDD" required>
+                            <input type="text" id="numero" nome="cartao" class="numDD" required>
+                            <input type="text" id="numero" nome="cartao" class="numDD" required>
+                            <input type="text" id="numero" nome="cartao" class="numDD" required>
+                        </div>
+                    </div>
+                    
+                    <div class="LinhaForm">
+                        <div class="ColEsq" id="valCartao">
+                            <label for="mesvalidade" class="LabBox">Validade:</label>
+                            <input type="number" id="mesvalidade" name="validade" class="numDD" min="01" max="12" required>
+                            <label for="anovalidade">/<label>
+                            <input type="number" id="anovalidade" name="validade" class="numQD" min="2000" max="2999" required>
+                        </div>
+                    </div>  
+                    
+                    <div class="LinhaForm">
+                        <div class="ColEsq" id="boxParcel">
+                            <label for="parcelas" class="LabBox">Parcelas:</label>
+                            <input type="number" id="parcelas" name="parcelas" class="numDD" min="01" max="12" required> x Sem Juros
+                        </div>
+                    </div>                
+                </fieldset>
+
+                <div class="botoes">
+                    <label for="confirmar"></label>
+                    <input type="submit" id="confirmar" value="Confirmar">
+                    <label for="limpar"></label>
+                    <input type="reset" id="limpar" value="Limpar">
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
+        
+        
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memórias</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
+
+        <script language="javascript">
+            var listaMemorias = new Array(4);
+            listaMemorias[0] = ["Tipo DDR3","Mem_Kingston_4gb_200", "Kingston", "4GB", "R$ 200,00"];
+            listaMemorias[1] = ["Tipo DDR3", "Mem_Samsung_8g_200", "Samsung", "8GB", "R$ 190,00"]; 
+            listaMemorias[2] = ["Tipo DDR4", "Mem_Fury_8gb_200", "Kingston Fury", "8GB", "R$ 298,00"]; 
+            listaMemorias[3] = ["Tipo DDR4", "Mem_Corsair_8gb_200","Corsair Vengeance", "8GB", "R$245,00"];
+
+            function abrirItem(tipo) {
+                var jan = open("", listaMemorias[tipo][0], "location=no, status=no, width=380, height=460");
+
+                with (jan.document) {
+                    write("<!DOCTYPE html>");
+                    write("<html><head><title>Memórias</title>");
+                    write("<link href='css/style.css' rel='stylesheet' type='text/css'>");
+                    write("</head><body>");
+                    write("<div class='Titulo'><h2>", listaMemorias[tipo][0], "</h2></div>");   
+                    write("<div class='alinhar'><img src='Imagens/", listaMemorias[tipo][1], ".jpg'></div>");
+                    write("<div class='janInfoDetalhe'><p>Fabricante: ", listaMemorias[tipo][2], "</p>");
+                    write("<p>Capacidade: ", listaMemorias[tipo][3], "</p>");
+                    write("<p>Preço: ", listaMemorias[tipo][4], "</p></div>");
+                    write("<form class='alinhar'><input type='button' value='Fechar'"); 
+                    write("onClick='window.close();'>");      
+                    write("</form></body></html>");
+                    close();
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <img src="Imagens/PakiLogoTopo.png" class="imgLogo" alt="Logo Elefante PakiMemo">
+            <adress class="ender">
+                Rua do Paço do Elefantinho, 123<br>
+                Tel: (21) 4321-5678<br>
+                <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+            </adress>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+                <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+                <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+                <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+                <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h3 class="Titulo">Memórias</h3>
+            <ol class="listaMemo">
+                <li><a target="_self" href="javascript:abrirItem(0);">DDR3 Kingston 4Gb</a></li>
+                <li><a target="_self" href="javascript:abrirItem(1);">DDR3 Samsung 8Gb</a></li>
+                <li><a target="_self" href="javascript:abrirItem(2);">DDR4 Kingston Fury 8Gb</a></li>
+                <li><a target="_self" href="javascript:abrirItem(3);">DDR4 Corsair Vengeance 8Gb</a></li>                   
+            </ol>         
+        </section>                       
+    </body>
+</html>

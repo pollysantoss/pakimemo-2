@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discos</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lora" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik" rel="stylesheet">
+
+        <script language="javascript">
+            var Produtos = new Array(6);
+            Produtos[0] = ["Western Digital", "HD Sata III", "500 Gb","HD_WD_500gb_70", "170,00"];
+            Produtos[1] = ["Seagate", "HD Sata III", "1 Tb", "HD_Seagate_1Tb_70", "350,00"];
+            Produtos[2] = ["Samdisk", "SSD Sata III", "480 Gb", "SSD_Samdisk_480Gb_70", "380,00"];
+            Produtos[3] = ["Kingston", "SSD Sata III", "960 Gb", "SSD_Kingston_960Gb_70", "700,00"];
+            Produtos[4] = ["Kingston", "SSD M2", "500 Gb", "SSD_Kingston_M2_5000Gb_70", "410,00"];
+            Produtos[5] = ["Western Digital", "SSD M2", "240 Gb", "SSD_WD_M2_240Gb_70", "270,00"];
+
+            function MostraProduto(ind) {
+                var fabricante = document.getElementById("titDes");
+                var imagem = document.getElementById("imgDes");
+                var descricao = document.getElementById("prcDes");
+
+                fabricante.innerHTML = Produtos[ind][0];
+                imagem.src = "Imagens/" + Produtos[ind][3] + ".jpg";
+                descricao.innerHTML = "<p>Interface: " + Produtos[ind][1] + "</p>" + "<p>Capacidade: " + Produtos[ind][2] + "</p>" + "Preço: R$ " + "<span class='preco'>" + Produtos[ind][4] + "</span></p>";
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header>
+            <img src="Imagens/PakiLogoTopo.png" class="imgLogo" alt="Logo Elefante PakiMemo">
+            <adress class="ender">
+                Rua do Paço do Elefantinho, 123<br>
+                Tel: (21) 4321-5678<br>
+                <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+            </adress>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+                <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+                <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+                <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+                <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <table class="tabDisco">
+                <caption class="titulo">HDs e SSDs Internos</caption>
+                <tr>
+                    <th class="linTH">Tipo/Interface</th>
+                    <th class="linTH">Fabricante</th>
+                    <th class="linTH">Descrição</th>
+                </tr>
+
+                <tr>
+                    <th rowspan="2" class="colTH">HD Sata III</th>
+                    <td class="colMenu"><a href="javascript:MostraProduto(0);" target="_self">Western Digital</a></td>
+                    <td rowspan="7">
+                        <h2 id="titDes"></h2>
+                        <img src="Imagens/vazio.jpg" alt="Imagem Vazia" id="imgDes">
+                        <div id="prcDes"></div>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td class="colMenu"><a href="javascript:MostraProduto(1);" target="_self">Seagate</a></td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2" class="colTH">SSD SATA III</th>
+                    <td class="colMenu"><a href="javascript:MostraProduto(2);" target="_self">Samdisk</a></td>
+                </tr>
+
+                <tr>
+                    
+                    <td class="colMenu"><a href="javascript:MostraProduto(3);" target="_self">Kingston</a></td>
+                <tr>
+
+                <tr>
+                    <th rowspan="2" class="colTH">SSD M2</th>
+                    <td class="colMenu"><a href="javascript:MostraProduto(4);" target="_self">Kingston</a></td>
+                </tr>
+
+                <tr>
+
+                    <td class="colMenu"><a href="javascript:MostraProduto(5);" target="_self">Western Digital</a></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>
